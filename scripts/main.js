@@ -14,3 +14,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 100);
     });
 });
+let images = ["../images/img1.jpg", "../images/img2.jpg", "../images/img3.jpg"];
+let index = 0;
+
+function nextImage() {
+  index = (index + 1) % images.length;
+  document.getElementById("mainImage").src = images[index];
+}
+
+function prevImage() {
+  index = (index - 1 + images.length) % images.length;
+  document.getElementById("mainImage").src = images[index];
+}
