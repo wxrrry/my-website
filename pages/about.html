@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мой сайт - О нас</title>
+    <title>О нас - Мой сайт</title>
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/header.css">
     <link rel="stylesheet" href="../styles/footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header class="site-header">
@@ -14,33 +16,64 @@
             <h1 class="logo">Мой Сайт</h1>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="../index.html">Главная</a></li>
-                    <li><a href="about.html" class="active">О нас</a></li>
-                    <li><a href="gallery.html">Галерея</a></li>
-                    <li><a href="contact.html">Контакты</a></li>
+                    <li><a href="../index.html"><i class="fas fa-home"></i> Главная</a></li>
+                    <li><a href="about.html" class="active"><i class="fas fa-info-circle"></i> О нас</a></li>
+                    <li><a href="gallery.html"><i class="fas fa-images"></i> Галерея</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Контакты</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main class="container">
-        <article>
-            <h2>О нашем проекте</h2>
-            <p>Этот сайт был создан в рамках лабораторной работы по изучению системы контроля версий Git и платформы GitHub.</p>
-            
-            <h3>Наши цели</h3>
-            <ul>
-                <li>Изучить основы работы с Git</li>
-                <li>Освоить взаимодействие с GitHub</li>
-                <li>Создать простой, но структурированный веб-сайт</li>
-                <li>Применить на практике HTML, CSS и JavaScript</li>
-            </ul>
-        </article>
+        <section class="section">
+            <h2 class="section-title">О нашем проекте</h2>
+            <p class="section-description">Этот сайт создан для изучения современных веб-технологий, Git и GitHub.</p>
+            <div class="card">
+                <h3>Наши цели</h3>
+                <ul>
+                    <li>Изучить основы работы с Git</li>
+                    <li>Освоить взаимодействие с GitHub</li>
+                    <li>Создать современный и структурированный веб-сайт</li>
+                    <li>Применить на практике HTML, CSS и JavaScript</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Автор проекта</h3>
+                <p><strong>Топчий А.Д.</strong> — студент группы 9ПО23к</p>
+            </div>
+        </section>
     </main>
 
     <footer class="site-footer">
         <div class="container">
-            <p>&copy; 2025 Мой Сайт. Все права защищены.</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>О сайте</h3>
+                    <p>Современный веб-сайт, созданный для изучения Git и GitHub.</p>
+                    <p>Автор: Топчий А.Д. | Группа: 9ПО23к</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Навигация</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Главная</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="gallery.html">Галерея</a></li>
+                        <li><a href="contact.html">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Социальные сети</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Мой Сайт. Все права защищены.</p>
+            </div>
         </div>
     </footer>
 

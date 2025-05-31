@@ -1,7 +1,131 @@
-<h2>Галерея</h2>
-<div id="gallery">
-  <img id="mainImage" src="../images/img1.jpg" alt="Галерея" width="300">
-  <br>
-  <button onclick="prevImage()">←</button>
-  <button onclick="nextImage()">→</button>
-</div>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея - Мой сайт</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/header.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../styles/gallery.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1 class="logo">Мой Сайт</h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html"><i class="fas fa-home"></i> Главная</a></li>
+                    <li><a href="about.html"><i class="fas fa-info-circle"></i> О нас</a></li>
+                    <li><a href="gallery.html" class="active"><i class="fas fa-images"></i> Галерея</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="gallery-section">
+            <h2 class="section-title">Галерея изображений</h2>
+            <p class="section-description">Просмотрите нашу коллекцию изображений</p>
+
+            <div class="gallery-container">
+                <div class="gallery-main">
+                    <div class="main-image-container">
+                        <img id="mainImage" src="../images/img1.jpg" alt="Галерея" class="main-image">
+                        <div class="image-overlay">
+                            <div class="image-info">
+                                <h3 id="imageTitle">Изображение 1</h3>
+                                <p id="imageDescription">Описание изображения</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-controls">
+                        <button class="gallery-btn prev-btn" onclick="prevImage()">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <div class="gallery-counter">
+                            <span id="currentImage">1</span> / <span id="totalImages">3</span>
+                        </div>
+                        <button class="gallery-btn next-btn" onclick="nextImage()">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="gallery-thumbnails">
+                    <div class="thumbnail-container">
+                        <img src="../images/cat1.jpg" alt="Милый котенок" class="thumbnail active" onclick="showImage(0)">
+                        <img src="../images/cat2.jpg" alt="Спящий котик" class="thumbnail" onclick="showImage(1)">
+                        <img src="../images/cat3.jpg" alt="Игривый кот" class="thumbnail" onclick="showImage(2)">
+                        <img src="../images/cat4.jpg" alt="Котик на окне" class="thumbnail" onclick="showImage(3)">
+                        <img src="../images/cat5.jpg" alt="Пушистый друг" class="thumbnail" onclick="showImage(4)">
+                        <img src="../images/cat6.jpg" alt="Котик и цветы" class="thumbnail" onclick="showImage(5)">
+                        <img src="../images/cat7.jpg" alt="Котик-исследователь" class="thumbnail" onclick="showImage(6)">
+                        <img src="../images/cat8.jpg" alt="Семейство котиков" class="thumbnail" onclick="showImage(7)">
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-features">
+                <div class="feature">
+                    <i class="fas fa-expand"></i>
+                    <span>Нажмите на изображение для полноэкранного просмотра</span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-keyboard"></i>
+                    <span>Используйте стрелки для навигации</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>О сайте</h3>
+                    <p>Современный веб-сайт, созданный для изучения Git и GitHub.</p>
+                    <p>Автор: Топчий А.Д. | Группа: 9ПО23к</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Навигация</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Главная</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="gallery.html">Галерея</a></li>
+                        <li><a href="contact.html">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Социальные сети</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Мой Сайт. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="fullscreen-modal" class="fullscreen-modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="fullscreen-image">
+        <button class="modal-btn prev-btn" onclick="prevImage()">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="modal-btn next-btn" onclick="nextImage()">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/gallery.js"></script>
+</body>
+</html>

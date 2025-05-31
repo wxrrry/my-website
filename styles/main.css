@@ -1,73 +1,283 @@
-body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --text-color: #2c3e50;
+    --light-bg: #f8f9fa;
+    --dark-bg: #2c3e50;
+    --transition: all 0.3s cubic-bezier(.4,0,.2,1);
+    --gradient-bg: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+}
+
+html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
-    color: #333;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: var(--gradient-bg);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    transition: background 0.6s;
 }
 
 .container {
-    width: 90%;
+    width: 92%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
 }
 
-.features {
-    display: flex;
-    justify-content: space-between;
-    margin: 2rem 0;
+main {
+    flex: 1 0 auto;
+    padding: 2.5rem 0 2rem 0;
+    animation: fadeIn 1.2s;
 }
 
-.feature-card {
-    flex: 1;
-    padding: 1rem;
-    margin: 0 1rem;
-    background: #f9f9f9;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+/* Общие стили для секций */
+.section {
+    margin-bottom: 3rem;
+    padding: 2.5rem 2rem;
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(44,62,80,0.08), 0 1.5px 4px rgba(44,62,80,0.04);
+    animation: fadeInUp 1.2s;
 }
 
-.hero {
-    padding: 2rem 0;
+.section-title {
+    color: var(--primary-color);
+    font-size: 2.4rem;
+    margin-bottom: 1.2rem;
     text-align: center;
-}
-# стили для контактов
-
-.contact-form {
-    max-width: 600px;
-    margin: 2rem auto;
-    padding: 1rem;
-    background: #f9f9f9;
-    border-radius: 5px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px rgba(44,62,80,0.07);
+    animation: fadeInDown 1.1s;
 }
 
+.section-description {
+    color: var(--text-color);
+    opacity: 0.85;
+    text-align: center;
+    margin-bottom: 2.2rem;
+    font-size: 1.15rem;
+    animation: fadeIn 1.3s;
+}
+
+/* Стили для карточек */
+.card {
+    background: linear-gradient(120deg, #f8fafc 60%, #eaf6fb 100%);
+    border-radius: 14px;
+    padding: 1.7rem 1.3rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(44,62,80,0.07);
+    transition: var(--transition);
+    animation: fadeInUp 1.2s;
+}
+
+.card:hover {
+    transform: translateY(-7px) scale(1.02);
+    box-shadow: 0 8px 24px rgba(44,62,80,0.13);
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Адаптивность */
+@media (max-width: 900px) {
+    .container {
+        width: 98%;
+    }
+    .section {
+        padding: 1.2rem 0.5rem;
+    }
+}
+@media (max-width: 768px) {
+    .section {
+        padding: 1rem 0.2rem;
+    }
+    .section-title {
+        font-size: 2rem;
+    }
+    .btn {
+        padding: 0.7rem 1.2rem;
+        font-size: 1rem;
+    }
+}
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 1.3rem;
+    }
+    .section {
+        padding: 0.5rem 0.1rem;
+    }
+}
+
+/* Стили для кнопок */
+.btn {
+    display: inline-block;
+    padding: 0.9rem 2.2rem;
+    background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+    letter-spacing: 0.5px;
+}
+
+.btn:hover {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 6px 18px rgba(44,62,80,0.13);
+}
+
+/* Стили для форм */
 .form-group {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .form-group label {
     display: block;
     margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    font-weight: 500;
 }
 
 .form-group input,
 .form-group textarea {
     width: 100%;
-    padding: 0.5rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    padding: 0.8rem;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    transition: var(--transition);
 }
 
-button[type="submit"] {
-    background: #35424a;
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--secondary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+/* Hero Section */
+.hero {
+    padding: 4rem 0;
+    text-align: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+    margin-bottom: 3rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-button[type="submit"]:hover {
-    background: #e8491d;
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    animation: fadeInDown 1s ease;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    animation: fadeInUp 1s ease;
+}
+
+.author-info {
+    background: rgba(255,255,255,0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    display: inline-block;
+    animation: fadeIn 1.5s ease;
+}
+
+/* Features Section */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.feature-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.feature-card i {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    color: var(--primary-color);
+    margin: 1rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .features {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero {
+        padding: 2rem 0;
+    }
+    
+    .hero h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Contact Form Styles */
+.contact-form {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }

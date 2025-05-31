@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/header.css">
     <link rel="stylesheet" href="styles/footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header class="site-header">
@@ -14,10 +16,10 @@
             <h1 class="logo">Мой Сайт</h1>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="index.html" class="active">Главная</a></li>
-                    <li><a href="pages/about.html">О нас</a></li>
-                    <li><a href="pages/gallery.html">Галерея</a></li>
-                    <li><a href="pages/contact.html">Контакты</a></li>
+                    <li><a href="index.html" class="active"><i class="fas fa-home"></i> Главная</a></li>
+                    <li><a href="pages/about.html"><i class="fas fa-info-circle"></i> О нас</a></li>
+                    <li><a href="pages/gallery.html"><i class="fas fa-images"></i> Галерея</a></li>
+                    <li><a href="pages/contact.html"><i class="fas fa-envelope"></i> Контакты</a></li>
                 </ul>
             </nav>
         </div>
@@ -27,18 +29,25 @@
         <section class="hero">
             <h2>Добро пожаловать!</h2>
             <p>Это главная страница моего сайта, созданного для изучения Git и GitHub.</p>
+            <div class="author-info">
+                <h3>Автор: Топчий А.Д.</h3>
+                <p>Группа: 9ПО23к</p>
+            </div>
         </section>
 
         <section class="features">
             <article class="feature-card">
+                <i class="fab fa-html5 fa-3x"></i>
                 <h3>HTML5</h3>
                 <p>Современная семантическая верстка</p>
             </article>
             <article class="feature-card">
+                <i class="fab fa-css3-alt fa-3x"></i>
                 <h3>CSS3</h3>
                 <p>Стилизация с использованием последних возможностей</p>
             </article>
             <article class="feature-card">
+                <i class="fab fa-js fa-3x"></i>
                 <h3>JavaScript</h3>
                 <p>Интерактивность и динамическое содержимое</p>
             </article>
@@ -47,7 +56,33 @@
 
     <footer class="site-footer">
         <div class="container">
-            <p>&copy; 2025 Мой Сайт. Все права защищены.</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>О сайте</h3>
+                    <p>Современный веб-сайт, созданный для изучения Git и GitHub.</p>
+                    <p>Автор: Топчий А.Д. | Группа: 9ПО23к</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Навигация</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="pages/about.html">О нас</a></li>
+                        <li><a href="pages/gallery.html">Галерея</a></li>
+                        <li><a href="pages/contact.html">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Социальные сети</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Мой Сайт. Все права защищены.</p>
+            </div>
         </div>
     </footer>
 
