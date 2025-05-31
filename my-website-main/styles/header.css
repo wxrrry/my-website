@@ -1,0 +1,76 @@
+/* Стили шапки */
+.site-header {
+    background: var(--primary-color);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.site-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+}
+
+.logo:hover {
+    color: var(--secondary-color);
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 1.5rem;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    background: rgba(255,255,255,0.1);
+    color: var(--secondary-color);
+}
+
+.main-nav i {
+    font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .site-header .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .main-nav a {
+        justify-content: center;
+    }
+}
